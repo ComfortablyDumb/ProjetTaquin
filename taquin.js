@@ -8,6 +8,7 @@ window.onload = function () {
 
 	//Compteur de coups
 	let compteur = 0;
+	
 	function nb_permutations(array){
 		let out = array;
 		let i = 2;
@@ -89,7 +90,7 @@ window.onload = function () {
 
 		if (isSort(out)) {
 			let result = document.getElementById("result");
-			result.innerHTML = "Bravo vous avez fini en " + compteur + "coups GG.";
+			result.innerHTML = "Bravo vous avez fini en " + compteur + " coups GG.";
 			result.style.visibility = "visible";
 
 		}
