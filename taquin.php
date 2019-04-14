@@ -1,15 +1,15 @@
 <?php
 
 function name($s)
-{ # taquin/image1/*.jpg
+{ // taquin/image1/*.jpg
 	$a = explode(".", basename($s));
 	return $a[0];
 }
 
 
 function isMovable($indice_blanc, $indice)
-//Fonction vérifiant si l'échange entre la case d'indice $indice et la case blanche est valide
 {
+	//Fonction vérifiant si l'échange entre la case d'indice $indice et la case blanche est valide
 	if ($indice_blanc % 3 == 1) {
 		return ($indice_blanc == $indice + 3 || $indice_blanc == $indice - 3 || $indice_blanc == $indice - 1);
 	} else if ($indice_blanc % 3 == 0) {
@@ -19,13 +19,14 @@ function isMovable($indice_blanc, $indice)
 	}
 }
 
-function shuffle_taquin(&$array){
+function shuffle_taquin(&$array)
+{
 	//Fonction mélangeant le tableau du taquin
 	$indice_blanc = 8; //La case blanche est initialement à l'incide 8
 	$n = 0;
-	while($n<200){
-		$i = random_int(0,8);
-		if(isMovable($indice_blanc,$i)){
+	while ($n < 200) {
+		$i = random_int(0, 8);
+		if (isMovable($indice_blanc, $i)) {
 			$temp = $array[$indice_blanc];
 			$array[$indice_blanc] = $array[$i];
 			$array[$i] = $temp;
