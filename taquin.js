@@ -1,6 +1,5 @@
 window.onload = function () {
 
-	blanc = document.getElementsByName("9");
 
 	// si "not_finished" est vrai, alors
 	// il reste des images à permuter
@@ -14,6 +13,7 @@ window.onload = function () {
 
 	// traîte le clic sur une image
 	function click_on() {
+		if(not_finished){
 		blanc = document.getElementsByName("9")[0];
 
 		array = Array.from(document.getElementsByTagName("img"));
@@ -30,6 +30,7 @@ window.onload = function () {
 			swap(this, blanc);
 			is_finished();
 		}
+	}
 	}
 
 
@@ -65,10 +66,13 @@ window.onload = function () {
 
 		if (isSort(out)) {
 			let result = document.getElementById("result");
+			let taquin = document.getElementById("taquin");
 			let blanc = document.getElementsByName("9")[0];
 			result.innerHTML = "Bravo vous avez fini en " + compteur + " coups GG.";
 			result.style.visibility = "visible";
 			blanc.src = blanc.src.slice(0, -5) + "10.jpg";
+			taquin.style.fontSize = "0";
+			not_finished = false;
 
 
 		}
