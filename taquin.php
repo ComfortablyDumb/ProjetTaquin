@@ -50,6 +50,7 @@ $title = file_get_contents("image/$taquin/title.txt");
 	<title>Taquin</title>
 	<meta name="author" content="Yassine et Enzo">
 	<link type="text/css" rel="stylesheet" href="taquin.css" />
+	<link rel="icon" type="image/png" href="icone.png" />
 	<script type="text/javascript" src="taquin.js"></script>
 </head>
 
