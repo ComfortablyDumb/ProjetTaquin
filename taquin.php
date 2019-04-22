@@ -31,8 +31,8 @@ function shuffle_taquin(&$array)
 			$array[$indice_blanc] = $array[$i];
 			$array[$i] = $temp;
 			$indice_blanc = $i;
+			$n++;
 		}
-		$n++;
 	}
 }
 
@@ -55,7 +55,7 @@ $title = file_get_contents("image/$taquin/title.txt");
 </head>
 
 <body>
-	<h1>Taquin</h1>
+	<h1><a href="index.php">Taquin</a></h1>
 	<hr>
 
 	<h2><?= $title ?></h2>
@@ -80,7 +80,7 @@ $title = file_get_contents("image/$taquin/title.txt");
 		</div>
 	</div>
 
-	<div id="result">Bravo vous avez terminé le taquin !!</div>
+	<div id="result"></div>
 
 </body>
 
