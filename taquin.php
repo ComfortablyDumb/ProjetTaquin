@@ -2,6 +2,7 @@
 $l = $_GET["ligne"];
 $c = $_GET["colonne"];
 $d = $l."x".$c;
+$max = $l*$c;
 function name($s)
 { // taquin/image1/*.jpg
 	$a = explode(".", basename($s));
@@ -39,7 +40,7 @@ function shuffle_taquin(&$array)
 }
 
 $taquin = $_GET["taquin"];
-$array = glob("image/$d/$taquin/[1-9].jpg");
+$array = glob("image/$d/$taquin/[1-$max].jpg");
 /*shuffle_taquin($array);*/
 $title = file_get_contents("image/$d/$taquin/title.txt");
 ?>
@@ -62,7 +63,7 @@ $title = file_get_contents("image/$d/$taquin/title.txt");
 
 	<h2><?= $title ?></h2>
 
-	<img id="image" src="image/<?= $taquin ?>/image.jpg" />
+	<img id="image" src="image/<?php echo $d."/" ?><?= $taquin ?>/image.jpg" />
 
 	<div id="taquin">
 		<div>
