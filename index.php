@@ -1,6 +1,3 @@
-<?php
-$array = glob("image/*");
-?>
 <!DOCTYPE html>
 <html>
 
@@ -16,20 +13,28 @@ $array = glob("image/*");
 	<h1>Le jeu de taquin</h1>
 	<hr>
 
-	<h2>Choisissez votre taquin !</h2>
+	<h2>Choisissez la taille de votre taquin</h2>
 
-	<?php
-	foreach ($array as $taquin) {
-		?>
-		<div class="small">
-			<a href="taquin.php?taquin=<?= basename($taquin) ?>">
-				<img src="<?= "$taquin/image.jpg" ?>" alt="Image" />
-			</a>
-			<h3><?= file_get_contents("$taquin/title.txt") ?></h3>
+	<form action="choix.php" method="get">
+
+		<div class="menus">
+			Nombre lignes:
+			<select name="lignes">
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+			<br>
+			Nombre colonnes:
+			<select name="colonnes">
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
 		</div>
-
-	<?php } ?>
+		<br>
+		<input type="submit" value="Envoyer" />
+	</form>
 
 </body>
+
 
 </html>
