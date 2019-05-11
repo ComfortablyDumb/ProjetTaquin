@@ -1,7 +1,7 @@
 <?php
 $l = $_GET["lignes"];
 $c = $_GET["colonnes"];
-$d = $l."x".$c;
+$d = $l . "x" . $c;
 $array = glob("image/$d/*");
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,8 @@ $array = glob("image/$d/*");
 </head>
 
 <body>
-	<h1>Le jeu de taquin</h1>
+	
+	<h1><a href="index.php">Le jeu de taquin</a></h1>
 	<hr>
 
 	<h2>Choisissez votre taquin !</h2>
@@ -25,7 +26,7 @@ $array = glob("image/$d/*");
 	foreach ($array as $taquin) {
 		?>
 		<div class="small">
-			<a href="taquin.php?taquin=<?= basename($taquin) ?>&ligne=<?= $l ?>&colonne=<?= $c ?>">
+			<a href="taquin.php?taquin=<?= basename($taquin) ?>&lignes=<?= $l ?>&colonnes=<?= $c ?>">
 				<img src="<?= "$taquin/image.jpg" ?>" alt="Image" />
 			</a>
 			<h3><?= file_get_contents("$taquin/title.txt") ?></h3>
@@ -33,7 +34,7 @@ $array = glob("image/$d/*");
 
 	<?php } ?>
 
-	
+
 
 </body>
 

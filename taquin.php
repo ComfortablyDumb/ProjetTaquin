@@ -1,6 +1,6 @@
 <?php
-$l = $_GET["ligne"];
-$c = $_GET["colonne"];
+$l = $_GET["lignes"];
+$c = $_GET["colonnes"];
 $d = $l."x".$c;
 $max = $l*$c;
 function name($s)
@@ -58,6 +58,7 @@ $title = file_get_contents("image/$d/$taquin/title.txt");
 </head>
 
 <body>
+<a href=<?php echo "choix.php?taquin=$taquin&lignes=$l&colonnes=$c"; ?> >  <img id="retour" src="retour.png" alt="Retour"></a>
 	<h1><a href="index.php">Taquin</a></h1>
 	<hr>
 
